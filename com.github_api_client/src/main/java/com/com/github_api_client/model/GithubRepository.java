@@ -14,19 +14,14 @@ public class GithubRepository {
     @JsonProperty("branches_url")
     private String branchesURL;
 
-    public List<GithubBranch> getBranches() {
-        return branches;
+    public GithubRepository() {
     }
 
-    public void setBranches(List<GithubBranch> branches) {
+    public GithubRepository(String name, GithubOwner owner, boolean fork, List<GithubBranch> branches, String branchesURL) {
+        this.name = name;
+        this.owner = owner;
+        this.fork = fork;
         this.branches = branches;
-    }
-
-    public String getBranchesURL() {
-        return branchesURL;
-    }
-
-    public void setBranchesURL(String branchesURL) {
         this.branchesURL = branchesURL;
     }
 
@@ -54,5 +49,19 @@ public class GithubRepository {
         this.fork = fork;
     }
 
+    public List<GithubBranch> getBranches() {
+        return branches;
+    }
 
+    public void setBranches(List<GithubBranch> branches) {
+        this.branches = branches;
+    }
+
+    public String getBranchesURL() {
+        return branchesURL;
+    }
+
+    public void setBranchesURL(String branchesURL) {
+        this.branchesURL = branchesURL;
+    }
 }

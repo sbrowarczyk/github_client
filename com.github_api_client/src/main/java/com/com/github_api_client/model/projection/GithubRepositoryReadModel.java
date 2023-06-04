@@ -11,6 +11,9 @@ public class GithubRepositoryReadModel {
     private String owner;
     private List<GithubBranchReadModel> branches;
 
+    public GithubRepositoryReadModel() {
+    }
+
     public GithubRepositoryReadModel(GithubRepository githubRepository) {
         this.repositoryName = githubRepository.getName();
         this.owner = githubRepository.getOwner().getLogin();

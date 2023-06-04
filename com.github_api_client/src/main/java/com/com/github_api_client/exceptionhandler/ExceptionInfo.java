@@ -8,6 +8,7 @@ import org.springframework.web.server.ResponseStatusException;
  */
 public class ExceptionInfo {
 
+
     private int status;
     @JsonProperty("Message")
     private String message;
@@ -20,19 +21,19 @@ public class ExceptionInfo {
         this.message = responseStatusException.getReason();
     }
 
-    int getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    void setStatus(int status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
-    String getMessage() {
+    public String getMessage() {
         return message;
     }
 
-    void setMessage(String message) {
+    public void setMessage(String message) {
         this.message = message;
     }
 }
