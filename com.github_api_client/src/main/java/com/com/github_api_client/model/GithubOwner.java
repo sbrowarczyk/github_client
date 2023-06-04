@@ -7,7 +7,7 @@ public class GithubOwner {
         return login;
     }
 
-    public void setLogin(String login) {
+    void setLogin(String login) {
         this.login = login;
     }
 }

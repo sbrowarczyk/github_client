@@ -9,7 +9,7 @@ public class GithubBranch {
         return name;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = name;
     }
 
@@ -17,7 +17,7 @@ public class GithubBranch {
         return commit;
     }
 
-    public void setCommit(GithubCommit commit) {
+    void setCommit(GithubCommit commit) {
         this.commit = commit;
     }
 }
