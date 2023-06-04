@@ -10,4 +10,6 @@ public class GithubCommit {
     public void setSha(String sha) {
         this.sha = sha;
     }
+
+
 }

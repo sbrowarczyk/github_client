@@ -4,6 +4,7 @@ import com.com.github_api_client.model.GithubRepository;
 
 import java.util.List;
 
+
 public class GithubRepositoryReadModel {
 
     private String repositoryName;
