@@ -41,7 +41,7 @@ public class GithubService {
         repositories.forEach(githubRepository -> {
                     githubRepository.setBranchesURL(githubRepository.getBranchesURL()
                             .replace("{/branch}", ""));
-                    //extract link to repository branches from filed "branches_url", by deliting "{/branch}" at link's end
+                    //extract link to repository branches from variable "branches_url", by deleting "{/branch}" at link's end
                     githubClient.loadBranches(githubRepository);
                 }
         );
