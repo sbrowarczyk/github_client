@@ -22,7 +22,6 @@ public class RepoController {
 
     @GetMapping(value = "/repo", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<GithubRepositoryReadModel>> getRepos(@RequestParam String username) {
-
         return ResponseEntity.ok(githubService.getRepositories(username));
     }
 

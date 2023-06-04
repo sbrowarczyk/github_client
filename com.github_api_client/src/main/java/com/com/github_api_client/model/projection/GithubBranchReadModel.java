@@ -7,6 +7,9 @@ public class GithubBranchReadModel {
     private String branchName;
     private String lastCommitSHA;
 
+    public GithubBranchReadModel() {
+    }
+
     public GithubBranchReadModel(GithubBranch githubBranch) {
         this.branchName = githubBranch.getName();
         this.lastCommitSHA = githubBranch.getCommit().getSha();
