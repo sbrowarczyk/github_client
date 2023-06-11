@@ -15,16 +15,13 @@ public class GithubService {
     public GithubService(GithubClient githubClient) {
         this.githubClient = githubClient;
     }
-
     /**
-     * Check if the user exist, get all user repository, fill every repository with branches,
-     *
      * @param username github user
      * @return complete user repository list
      */
     public List<GithubRepositoryReadModel> getRepositories(String username) {
 
-        checkIfUserExist(username);
+        githubClient.isUserExist(username);
         List<GithubRepository> repositories = githubClient.getRepositories(username)
                 .stream().filter(githubRepository -> !githubRepository.isFork()).toList();
         loadBranches(repositories);
@@ -34,25 +31,17 @@ public class GithubService {
     /**
      * Load branches for every repository in user repository list
      *
-     * @param repositories  repository list
+     * @param repositories repository list
      */
     public void loadBranches(List<GithubRepository> repositories) {
 
         repositories.forEach(githubRepository -> {
-                    githubRepository.setBranchesURL(githubRepository.getBranchesURL()
-                            .replace("{/branch}", ""));
-                    //extract link to repository branches from variable "branches_url", by deleting "{/branch}" at link's end
-                    githubClient.loadBranches(githubRepository);
+            githubRepository.setBranchesURL(githubRepository.getBranchesURL()
+                    .replace("{/branch}", ""));
+            githubRepository.setBranches(githubClient.loadBranches(githubRepository));
                 }
         );
     }
-    /**
-     * Check if the user exists. If a user does not exist then throw an exception, otherwise do nothing
-     *
-     * @param username GitHub username to check if user exist
-     */
-    public void checkIfUserExist(String username){
-        githubClient.isUserExist(username);
-    }
+
 
 }
