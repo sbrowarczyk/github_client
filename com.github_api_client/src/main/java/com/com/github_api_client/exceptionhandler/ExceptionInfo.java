@@ -10,7 +10,6 @@ public class ExceptionInfo {
 
 
     private int status;
-    @JsonProperty("Message")
     private String message;
 
     public ExceptionInfo() {
