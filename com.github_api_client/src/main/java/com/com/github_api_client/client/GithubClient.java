@@ -17,7 +17,7 @@ public class GithubClient {
     private final WebClient webClient;
 
     public GithubClient(WebClient.Builder webClientBuilder) {
-        this.webClient = WebClient.builder().baseUrl("https://api.github.com").build();
+        this.webClient = webClientBuilder.baseUrl("https://api.github.com").build();
     }
 
     /**
