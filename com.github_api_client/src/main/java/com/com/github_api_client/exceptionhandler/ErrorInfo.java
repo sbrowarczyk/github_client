@@ -1,21 +1,22 @@
 package com.com.github_api_client.exceptionhandler;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.web.ErrorResponseException;
 import org.springframework.web.server.ResponseStatusException;
 
 /**
  * the model used to send information when an exception occurs
  */
-public class ExceptionInfo {
+public class ErrorInfo {
 
 
     private int status;
     private String message;
 
-    public ExceptionInfo() {
+    public ErrorInfo() {
     }
 
-    ExceptionInfo(ResponseStatusException responseStatusException) {
+
+    ErrorInfo(ResponseStatusException responseStatusException) {
         this.status = responseStatusException.getStatusCode().value();
         this.message = responseStatusException.getReason();
     }

@@ -61,7 +61,7 @@ public class GithubRepository {
         return branchesURL;
     }
 
-    public void setBranchesURL(String branchesURL) {
+    void setBranchesURL(String branchesURL) {
         this.branchesURL = branchesURL;
     }
 }
