@@ -4,9 +4,6 @@ public class GithubOwner {
 
     private String login;
 
-    public GithubOwner() {
-    }
-
     public GithubOwner(String login) {
         this.login = login;
     }

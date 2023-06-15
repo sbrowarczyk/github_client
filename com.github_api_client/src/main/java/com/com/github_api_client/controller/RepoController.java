@@ -2,6 +2,7 @@ package com.com.github_api_client.controller;
 
 import com.com.github_api_client.model.projection.GithubRepositoryReadModel;
 import com.com.github_api_client.service.GithubService;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

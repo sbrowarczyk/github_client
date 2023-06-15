@@ -11,36 +11,33 @@ public class GithubRepositoryReadModel {
     private String owner;
     private List<GithubBranchReadModel> branches;
 
-    public GithubRepositoryReadModel() {
-    }
-
     public GithubRepositoryReadModel(GithubRepository githubRepository) {
         this.repositoryName = githubRepository.getName();
         this.owner = githubRepository.getOwner().getLogin();
         this.branches = githubRepository.getBranches().stream().map(branch -> new GithubBranchReadModel(branch)).toList();
     }
 
-    public String getRepositoryName() {
+    String getRepositoryName() {
         return repositoryName;
     }
 
-    public void setRepositoryName(String repositoryName) {
+    void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
 
-    public String getOwner() {
+    String getOwner() {
         return owner;
     }
 
-    public void setOwner(String owner) {
+    void setOwner(String owner) {
         this.owner = owner;
     }
 
-    public List<GithubBranchReadModel> getBranches() {
+    List<GithubBranchReadModel> getBranches() {
         return branches;
     }
 
-    public void setBranches(List<GithubBranchReadModel> branches) {
+    void setBranches(List<GithubBranchReadModel> branches) {
         this.branches = branches;
     }
 }

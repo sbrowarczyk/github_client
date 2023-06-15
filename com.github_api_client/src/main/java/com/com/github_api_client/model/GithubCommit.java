@@ -15,7 +15,7 @@ public class GithubCommit {
         return sha;
     }
 
-    public void setSha(String sha) {
+    void setSha(String sha) {
         this.sha = sha;
     }
 

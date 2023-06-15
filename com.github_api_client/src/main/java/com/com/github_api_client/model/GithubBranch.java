@@ -4,10 +4,7 @@ public class GithubBranch {
 
     private String name;
     private GithubCommit commit;
-
-    public GithubBranch() {
-    }
-
+    
     public GithubBranch(String name, GithubCommit commit) {
         this.name = name;
         this.commit = commit;
